@@ -13,7 +13,8 @@ downloads/
 eggs/
 .eggs/
 lib64/
-parts/
+parts/git commit -m "Initial commit for Educraft LMS"
+
 sdist/
 var/
 wheels/
