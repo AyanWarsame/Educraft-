@@ -3,5 +3,5 @@ EduCraft-LMS is a web-based platform designed to simplify online teaching and le
 
 <ins> </ins>
 
-#** Database Schema **
+## **Database Schema**
 <img width="1842" height="1872" alt="Educraft-DB drawio" src="https://github.com/user-attachments/assets/237c5dd5-aa56-4759-bcae-6220fc44c670" />
