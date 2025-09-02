@@ -1,0 +1,123 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-08-31 12:42:03.586392",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "first_name",
+  "last_name",
+  "email",
+  "password",
+  "confirm_password",
+  "role",
+  "phone_number",
+  "date_of_birth",
+  "naming_series",
+  "gender"
+ ],
+ "fields": [
+  {
+   "description": "Enter your first name",
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "description": "Enter your last name",
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "description": "Enter your email address",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email Address",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "description": "Create a strong password",
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "in_list_view": 1,
+   "label": "Password",
+   "reqd": 1
+  },
+  {
+   "description": "Confirm your password",
+   "fieldname": "confirm_password",
+   "fieldtype": "Password",
+   "label": "Confirm Password ",
+   "reqd": 1
+  },
+  {
+   "description": "Choose your role",
+   "fieldname": "role",
+   "fieldtype": "Select",
+   "label": "Role",
+   "options": "Student\nTeacher\nAdmin",
+   "reqd": 1
+  },
+  {
+   "description": "Enter your phone number",
+   "fieldname": "phone_number",
+   "fieldtype": "Phone",
+   "label": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "reqd": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "STU.#####\nTEA.#####\nADM.#####"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "male\nfemale\nothers"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-02 08:07:17.616117",
+ "modified_by": "Administrator",
+ "module": "educraft-lms",
+ "name": "Registration",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
