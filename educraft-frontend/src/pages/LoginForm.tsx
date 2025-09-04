@@ -29,21 +29,44 @@ const LoginForm: React.FC = () => {
     },
   });
 
+  // ✅ Load keys from .env
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const apiSecret = import.meta.env.VITE_API_SECRET;
+
+  // ✅ Updated onSubmit with backend request
   const onSubmit: SubmitHandler<LoginFormData> = async (data) => {
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      
+      const response = await fetch("/api/method/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-API-KEY": apiKey,
+          "X-API-SECRET": apiSecret,
+        },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Login failed");
+      }
+
+      const result = await response.json();
+
       showToast({
         title: "Login Successful!",
-        description: "Welcome back! You have been logged in successfully.",
+        description: `Welcome back ${result?.full_name || ""}!`,
       });
-      
-      console.log("Login data:", data);
+
+      console.log("✅ Login response:", result);
+
     } catch (error) {
+      console.error("❌ Login error:", error);
       showToast({
         title: "Login Failed",
-        description: "Invalid credentials. Please check your email and password.",
+        description: "Invalid credentials or server error.",
         variant: "error",
       });
     }
@@ -52,13 +75,13 @@ const LoginForm: React.FC = () => {
   return (
      <> 
      <Navbar />
-      <div className="bg-skySoft min-h-screen top-24">  
-        <Card className="w-full max-w-md bg-gray-100 mt-24 mb-32 mx-auto shadow-lg border-border/50">
+      <div className="min-h-screen bg-blue-100 p-4 mt-16">  
+        <Card className="max-w-lg mx-auto mt-10 shadow-xl rounded-xl">
           <CardHeader className="text-center space-y-4">
-            <div className="mx-auto w-16 h-16  rounded-full flex items-center justify-center">
-              <LogIn className="w-8 h-8 " />
+            <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center">
+              <LogIn className="w-8 h-8" />
             </div>
-            <CardTitle className="text-3xl font-bold bg-clip-text ">
+            <CardTitle className="text-3xl font-bold bg-clip-text">
               Welcome Back
             </CardTitle>
             <CardDescription className="text-lg text-muted-foreground">
@@ -144,8 +167,6 @@ const LoginForm: React.FC = () => {
               </Button>
             </form>
 
-           
-
             <div className="text-center">
               <p className="text-md text-gray-700">
                 Don't have an account?{" "}
@@ -156,7 +177,7 @@ const LoginForm: React.FC = () => {
             </div>
           </CardContent>
         </Card>
-        </div>
+      </div>
     </>
   );
 };

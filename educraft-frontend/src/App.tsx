@@ -14,6 +14,8 @@ import SettingsPage from './pages/SettingsPage';
 import AdminDashboard from "./dashboards/AdminDashboard"
 
 
+
+
 function App() {
 
 
@@ -21,8 +23,13 @@ function App() {
 
 	return (
 		<div className="App">
-			<FrappeProvider  url={import.meta.env.VITE_FRAPPE_BACKEND_URL}
-		      
+			<FrappeProvider   url={"http://localhost:8002"}
+		       enableSocket={false}
+          tokenParams={{
+			useToken: true,
+			type: "token", 
+			token: () => `${import.meta.env.VITE_API_KEY}:${import.meta.env.VITE_API_SECRET}`,
+		}}
 			>
 				<Router>
 					
