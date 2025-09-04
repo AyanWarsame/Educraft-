@@ -11,7 +11,9 @@ import ProgressPage from './pages/ProgressPage';
 import DiscussionsPage from './pages/DiscussionsPage';
 import AssignmentsPage from './pages/AssignmentsPage';
 import SettingsPage from './pages/SettingsPage';
-import AdminDashboard from "./dashboards/AdminDashboard"
+import AdminDashboard from "./dashboards/AdminDashboard";
+import Sessions from "./pages/Sessions";
+import Courses from "./pages/Courses";
 
 
 
@@ -46,6 +48,9 @@ function App() {
 						<Route path='/AssignmentsPage' element={< AssignmentsPage/>}/>
 						<Route path='/SettingsPage' element={< SettingsPage/>}/>
 						<Route path='/AdminDashboard' element={< AdminDashboard/>}/>
+						<Route path='/sessions' element={< Sessions/>}/>
+						<Route path='/courses' element={< Courses/>}/>
+
 					</Routes>
 				</Router>
 			</FrappeProvider>

@@ -148,6 +148,8 @@ export const personalDetailsSchema = z.object({
     .max(500, "Bio must be less than 500 characters")
     .optional()
     .or(z.literal("")),
+
+     role: z.enum(["Student", "Teacher"]),
 });
 
 export type RegistrationFormData = z.infer<typeof registrationSchema>;

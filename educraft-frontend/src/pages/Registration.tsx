@@ -22,7 +22,7 @@ type RegistrationForm = {
   email: string;
   password: string;
   confirm_password: string;
-  role: "Student" | "Teacher" | "Admin";
+  role: "Student" | "Teacher" ;
   phone_number: string;
   date_of_birth: string;
   gender: "Male" | "Female" | "Other";
@@ -72,7 +72,7 @@ export default function RegistrationForm() {
       const result = await response.json();
 
       if (response.ok && result.message) {
-        navigate("/PersonalDetailsForm");
+        navigate(`/PersonalDetailsForm?role=${data.role}`);
       } else {
         setApiError(result.error || "Registration failed");
       }
@@ -241,7 +241,7 @@ export default function RegistrationForm() {
                     <SelectContent>
                       <SelectItem value="Student">Student</SelectItem>
                       <SelectItem value="Teacher">Teacher</SelectItem>
-                      <SelectItem value="Admin">Admin</SelectItem>
+
                     </SelectContent>
                   </Select>
                   {errors.role && <p className="text-sm text-destructive mt-1">Role is required</p>}

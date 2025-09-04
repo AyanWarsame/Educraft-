@@ -63,7 +63,7 @@
    "fieldname": "role",
    "fieldtype": "Select",
    "label": "Role",
-   "options": "Student\nTeacher\nAdmin",
+   "options": "Student\nTeacher",
    "reqd": 1
   },
   {
@@ -83,7 +83,7 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
-   "options": "STU.#####\nTEA.#####\nADM.#####"
+   "options": "STU.#####\nTEA.#####"
   },
   {
    "fieldname": "gender",
@@ -95,7 +95,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-02 08:07:17.616117",
+ "modified": "2025-09-04 08:10:15.308944",
  "modified_by": "Administrator",
  "module": "educraft-lms",
  "name": "Registration",
