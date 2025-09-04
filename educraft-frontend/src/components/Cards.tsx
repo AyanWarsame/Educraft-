@@ -109,7 +109,7 @@ const Cards: React.FC<CardProps> = ({
         {actionText && onAction && (
           <button
             onClick={onAction}
-            className={`mt-4 px-8 ml-20 py-2  text-white rounded-xl hover:bg-blue-900 transition-colors ${className}`}
+            className={`mt-4 px-8 ml-20 py-2 bg-indigoDeep  text-white rounded-xl ${className}`}
           >
             {actionText}
           </button>

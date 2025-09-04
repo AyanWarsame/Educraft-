@@ -7,11 +7,10 @@ import PersonalDetailsForm from './pages/PersonalDetailsForm';
 import StudentDashboard from './dashboards/StudentDashboard';
 import TeacherDashboard from  "./dashboards/TeacherDashboard";
 import CoursesPage from './pages/CoursesPage';
-import ProgressPage from './pages/ProgressPage';
+import PaymentPage from './pages/PaymentPage';
 import DiscussionsPage from './pages/DiscussionsPage';
 import AssignmentsPage from './pages/AssignmentsPage';
 import SettingsPage from './pages/SettingsPage';
-import AdminDashboard from "./dashboards/AdminDashboard";
 import Sessions from "./pages/Sessions";
 import Courses from "./pages/Courses";
 
@@ -43,11 +42,10 @@ function App() {
 						<Route path="/StudentDashboard" element={<StudentDashboard/>} />
 						<Route path='/TeacherDashboard' element={< TeacherDashboard/>}/>
 						<Route path='/CoursesPage' element={< CoursesPage/>}/>
-						<Route path='/ProgressPage' element={< ProgressPage/>}/>
+						<Route path='/PaymentPage' element={< PaymentPage/>}/>
 						<Route path='/DiscussionsPage' element={< DiscussionsPage/>}/>
 						<Route path='/AssignmentsPage' element={< AssignmentsPage/>}/>
 						<Route path='/SettingsPage' element={< SettingsPage/>}/>
-						<Route path='/AdminDashboard' element={< AdminDashboard/>}/>
 						<Route path='/sessions' element={< Sessions/>}/>
 						<Route path='/courses' element={< Courses/>}/>
 
